@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learning Javascript Fundamentals</title>
+    <style rel="stylesheet">
+        #first {
+            color: green;
+        }
+
+        #second {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Un-orderded list 1</h2>
+<ul id="first"></ul>
+
+<script>
+    function addMessage(element, message) {
+        var messageElement = document.createElement("li");
+        messageElement.textContent = message;
+        element.appendChild(messageElement);
+    }
+
+    var first = document.getElementById("first");
+    addMessage(first, "Page Loading...");
+</script>
+
+<h2>Un-orderded list 2</h2>
+<ul id="second"></ul>
+
+<script>
+    // Attach mouse move event handler to body - Call back function adds new li element
+    document.body.addEventListener("click", function () {
+        var second = document.getElementById("second");
+        addMessage(second, "Event : Mouse move");
+    });
+
+    // Attach click event handler to body - call back function handles
+    document.body.addEventListener("click", function () {
+        var second = window.document.getElementById("second");
+        addMessage(second, "Event : click");
+    });
+
+</script>
+</body>
+</html>
